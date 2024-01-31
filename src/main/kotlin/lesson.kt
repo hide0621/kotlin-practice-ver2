@@ -1,3 +1,4 @@
 fun main() {
-    println("Hello, Kotlin!")
+    val name = "Kotlin"
+    println("Hello, $name!")
 }
