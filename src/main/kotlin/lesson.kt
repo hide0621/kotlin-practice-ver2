@@ -1,11 +1,23 @@
 fun main() {
 
-    var any:Any = "Hello"
-    println("$any is ${any::class}")
-    println("$any is ${any::class.simpleName}")
+    var x: Int = 10
 
-    any = 1
-    println("$any is ${any::class}")
-    println("$any is ${any::class.simpleName}")
+    println("$x = ${x::class.simpleName}")
+
+    var y: Float = x.toFloat()
+
+    println("$y = ${y::class.simpleName}")
+
+    var z: String = x.toString()
+
+    println("$z = ${z::class.simpleName}")
+
+    var dd = 1.6
+
+    println("$dd = ${dd::class.simpleName}")
+
+    var d: Int = dd.toInt()
+
+    println("$d = ${d::class.simpleName}") // 1
 
 }
