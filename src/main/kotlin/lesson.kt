@@ -1,33 +1,24 @@
 fun main() {
 
-    var array = arrayOf(1, 2, 3, 4, 5)
+    var array = intArrayOf(1, 2, 3, 4, 5)
 
-//    println(array[0])
+    var array1 = arrayOf(1, 2, 3, 4, 10)
 
-    /*
-    下５つの処理は全て同じ結果になる
-    downToは降順になる
-    untilは最後の値を含まない
-    */
+    // 両者の型（IntArrayとArray<Int>）は別物なのでエラーになる
+//    array = array1
 
+    // 初期値がnullの配列を作成（要素数は5）
+    var array2 = arrayOfNulls<String>(5)
 
-    for (i in array) {
+    for (i in array2) {
         println(i)
     }
 
-    for (i in 0..4) {
-        println(array[i])
-    }
+    // 上記の初期値を具体的な値に上書き（型はArray<String?>のまま）
+    array2 = arrayOf("a", "b", "c", "d", "e")
 
-    for (i in 0 until 5) {
-        println(array[i])
+    for (i in array2) {
+        println(i)
     }
-
-    for (i in 4 downTo 0) {
-        println(array[i])
-    }
-
-    // forEach内はラムダ式
-    array.forEach { println(it) }
 
 }
