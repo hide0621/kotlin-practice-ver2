@@ -2,32 +2,19 @@ fun main() {
 
     // コレクション型...可変長
     // 例：リスト、セット、マップ
-    // リスト...Go言語で言うスライスみたいなもの
+    // セット...順番の概念がなく（インデックス番号がなく）、重複した要素を持たない
 
-    var list = listOf(10, 20, 30)
-    println(list[0])
-    println(list)
+    var set = mutableSetOf(10, 20, 30)
+    println(set)
 
-    // listOf() is immutable
-//    list[0] = 100
+    // 要素の追加
+    set.add(40)
+    println(set)
 
-    // mutableListOf() is mutable
-    list = mutableListOf(10, 20, 30)
-    list[0] = 100
-    println(list)
+    // 要素の削除
+    set.remove(30)
+    println(set)
 
-    // 追加
-    list.add(40)
-    println(list)
 
-    list.add(0,500)
-    println(list)
-
-    // 削除
-    list.removeAt(0)
-    println(list)
-
-    list.remove(100)
-    println(list)
 
 }
