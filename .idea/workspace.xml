@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e090b81-c5d3-4f65-af68-3d4289d5c307" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/lesson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/lesson.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
