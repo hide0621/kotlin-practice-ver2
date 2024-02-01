@@ -1,24 +1,33 @@
 fun main() {
 
-    var array = intArrayOf(1, 2, 3, 4, 5)
+    // コレクション型...可変長
+    // 例：リスト、セット、マップ
+    // リスト...Go言語で言うスライスみたいなもの
 
-    var array1 = arrayOf(1, 2, 3, 4, 10)
+    var list = listOf(10, 20, 30)
+    println(list[0])
+    println(list)
 
-    // 両者の型（IntArrayとArray<Int>）は別物なのでエラーになる
-//    array = array1
+    // listOf() is immutable
+//    list[0] = 100
 
-    // 初期値がnullの配列を作成（要素数は5）
-    var array2 = arrayOfNulls<String>(5)
+    // mutableListOf() is mutable
+    list = mutableListOf(10, 20, 30)
+    list[0] = 100
+    println(list)
 
-    for (i in array2) {
-        println(i)
-    }
+    // 追加
+    list.add(40)
+    println(list)
 
-    // 上記の初期値を具体的な値に上書き（型はArray<String?>のまま）
-    array2 = arrayOf("a", "b", "c", "d", "e")
+    list.add(0,500)
+    println(list)
 
-    for (i in array2) {
-        println(i)
-    }
+    // 削除
+    list.removeAt(0)
+    println(list)
+
+    list.remove(100)
+    println(list)
 
 }
