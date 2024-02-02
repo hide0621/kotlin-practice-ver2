@@ -2,50 +2,66 @@ package chapter3
 
 fun main() {
 
-    // 配列のパターン
-    // リストもこれと同じ
-
-    var array = arrayOf(1, 2, 3, 4, 5)
-    for (i in array) {
-        println(i)
+    // break
+    for (i in 1..10) {
+        if (i == 5) {
+            break
+        }
+        println(i) // 1, 2, 3, 4
     }
 
-    // インデックスも表示
-    for ((index, value) in array.withIndex()) {
-        println("the element at $index is $value")
+    // continue
+    for (i in 1..10) {
+        if (i == 5) {
+            continue
+        }
+        println(i) // 1, 2, 3, 4, 6, 7, 8, 9, 10
     }
 
-    // インデックスだけindexに渡す
-    for (index in array.indices) {
-        println("the element at $index is ${array[index]}")
+    // break 2重for文
+    for (i in 1..10) {
+        for (j in 1..10) {
+            if (j == 5) {
+                break // ここでbreakすると内側のfor文のみが終了する(外側のfor文は継続)
+            }
+            print(j) // 1234のループが10回
+        }
+        println()
     }
 
-    // セットのパターン
-    var set = setOf(1, 2, 3, 4, 5)
-    for (i in set) {
-        println(i)
+    // continue 2重for文
+    for (i in 1..10) {
+        for (j in 1..10) {
+            if (j == 5) {
+                continue // ここでcontinueすると内側のfor文のみが終了する(外側のfor文は継続)
+            }
+            print(j) // 1234678910のループが10回
+        }
+        println()
     }
 
-    // マップのパターン
-    var map = mapOf(1 to "one", 2 to "two", 3 to "three")
-    for (kv in map) {
-        println(kv) // 1=one, 2=two, 3=three
+    // ラベルを付与して外側のfor文を終了する
+    outer@ for (i in 1..10) {
+        for (j in 1..10) {
+            if (j == 5) {
+                break@outer // ここでbreakすると外側のfor文が終了する
+            }
+            print(j) // 1234が1回
+        }
+        println()
     }
 
-
-    // キーと値を同時に
-    for ((key, value) in map) {
-        println("the element at $key is $value")
-    }
-
-    // mapのキーだけkeyに渡す
-    for (key in map.keys) {
-        println("the element at $key is ${map[key]}")
-    }
-
-    // mapの値だけ
-    for (value in map.values) {
-        println("the element is $value")
+    // jのループ内でj == 5の条件が満たされた場合、continue@outerが実行され、外側のループが次のイテレーションに進む
+    // これにより、j == 5のときのprint(j)はスキップされる
+    // 外側のfor文が終了する訳でないので注意
+    outer@ for (i in 1..10) {
+        for (j in 1..10) {
+            if (j == 5) {
+                continue@outer // ここでcontinueすると外側のfor文が次のイテレーションに進む
+            }
+            print(j) // 1234が10回
+        }
+        println()
     }
 
 }
