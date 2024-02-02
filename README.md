@@ -12,7 +12,7 @@ https://www.udemy.com/course/kotlin-developer/
 
 ・それも嫌ならビルドツールは「intelij idea」にする
 
-・ソースコードは`src/chapter2.main/kotlin`の下に書く
+・ソースコードは`src/main/kotlin/各種チャプター`の下に書く
 
 ・エントリーポイント（デフォルトは`Main.kt`）は複数作成できる？（例：lessen.kt内にmain関数を用意）
 
